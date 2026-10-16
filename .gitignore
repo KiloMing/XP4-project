@@ -1,0 +1,11 @@
+# Build outputs
+build/
+CMakeFiles/
+CMakeCache.txt
+compile_commands.json
+# Raw runtime data
+logs/
+*.ulg
+# Local files
+.DS_Store
+.env
