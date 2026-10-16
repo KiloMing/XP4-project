@@ -60,3 +60,9 @@
 每周安排 4～5 次，考试周减量并顺延，不降低验收标准。
 
 参考学习资产：https://github.com/KiloMing/LINUX-STUDY （本次读取 HEAD 63ceb47a5993475d1503e2ce36b16f0078d97731）
+
+## 2026-10-16 进度定位
+
+阶段 1 已完成 SITL/X500 启动、QGC 连接和 commander 起降基线实践；版本矩阵、独立重启复现仍待补齐。阶段 2 已安装 MAVSDK v4.0.1 amd64 并完成 lesson_01 编译链接，真实源码待同步；尚无程序运行或系统发现证据。
+
+下一课先运行 `./build/px4_connect` 验证发现 PX4，成功后进入 Telemetry。不得跳过发现验证或将 commander 起降计为阶段 3 的 MAVSDK 自动起降。详见 [CURRENT](../CURRENT.md) 与 [当日记录](../daily/2026-10-16.md)。

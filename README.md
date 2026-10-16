@@ -1,6 +1,8 @@
 # 基于 PX4 的无人机自主导航与光伏板清洁系统
 
-当前阶段：V1.0 自主起降与单目标往返仿真。项目处于规划阶段，尚未安装、构建或运行验证。
+当前阶段：V1.0 自主起降与单目标往返仿真。2026-10-16 已完成 PX4 SITL + Gazebo X500 启动、QGC 连接、commander 起降练习，以及 MAVSDK lesson_01 编译链接。**px4_connect 运行与发现飞控尚未验证**；下一步验证系统发现，再学习 Telemetry。
+
+历史：当天初始化时处于规划阶段，尚未安装、构建或运行验证；后续实验见[当日记录](daily/2026-10-16.md)。
 
 ## V1.0 目标
 
@@ -26,6 +28,6 @@ Ubuntu 24.04 + PX4 SITL + Gazebo Harmonic + X500 + QGroundControl + MAVSDK C++�
 ## 仓库与运行环境
 
 本仓库通过 SSH 关联 git@github.com:KiloMing/XP4-project.git。
-本地 macOS 目录用于文档和版本管理；Ubuntu 才是计划中的仿真执行环境。尚未确认当前 Ubuntu 实测配置。
+本地 macOS 目录用于文档和版本管理；Ubuntu 是仿真实验环境；用户聊天展示 Ubuntu x86_64，MAVSDK 安装截图显示 Ubuntu 24.04 对应包安装成功，版本细节见 [ENVIRONMENT](ENVIRONMENT.md)。
 
-后续源码目录：src/、include/、config/、simulation/、scripts/、tests/、exercises/。本次只提交规划文档，不生成实现代码或假测试结果。
+后续源码目录：src/、include/、config/、simulation/、scripts/、tests/、exercises/。初始化提交只包含规划文档；本次补充实际学习记录。Ubuntu 中的真实 main.cpp、CMakeLists.txt 尚未取得，源码待同步，不以聊天示例代替。
