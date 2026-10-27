@@ -1,5 +1,26 @@
 # 环境与版本
 
+## 2026-10-27 视觉路线适配表（规划，未安装或复测）
+
+| 项目 | 目标 / 核查内容 | 当前证据 |
+|---|---|---|
+| Ubuntu | 24.04；核对架构、图形加速、资源与网络 | 沿用下方历史记录，尚无本次系统输出 |
+| ROS 2 | Jazzy；独立终端、独立 `~/vision_landing_ws` | 安装版本、RMW、overlay 待核验 |
+| Gazebo | Harmonic，与 Jazzy 配套 | 旧 X500 跑通过，实际 Gazebo 版本仍待核验 |
+| PX4 / px4_msgs | 按实际 PX4 release/commit 核对消息版本与话题 | PX4 commit 未取得，不能先指定已兼容 |
+| Micro XRCE-DDS Agent | 与所选 PX4 client 版本相容 | 来源、版本、端口、通信待验收 |
+| ros_gz | 图像、CameraInfo、时钟桥接；记录类型与方向 | 话题名、QoS、频率待测 |
+| AprilTag / image_proc | 核查 Jazzy 包来源、组件插件与参数 | 版本、标签尺寸定义与输出 frame 待测 |
+| Python / 数值依赖 | 核验系统 Python、NumPy、YAML 与包环境 | 不沿用上游 Python 3.10 假设 |
+| 模型与 world | 独立存放；验证资源路径和 PX4 启动配置 | 不覆盖 PX4 内 models/worlds，不假定现成 make target 存在 |
+| QGC / MAVSDK | 保留旧环境与 V1.0 记录 | 本次未升级、未重装、未修改源码 |
+
+参考项目基于 Ubuntu 22.04/Humble/Garden，不能只替换名字就认为适配完成。官方选型依据见 [REP-2000](https://github.com/ros-infrastructure/rep/blob/master/rep-2000.rst)、[ROS/Gazebo 配套](https://gazebosim.org/docs/harmonic/ros_installation/)、[PX4 ROS 2 指南](https://docs.px4.io/main/en/ros2/user_guide)。
+
+版本冻结至少记录：系统与架构、PX4 commit 与本地差异、px4_msgs commit、Agent 版本、ROS/Gazebo/ros_gz/检测器包版本、模型与配置版本、依赖来源。先只读盘点，再决定适配；不以重装或全局修改环境变量代替定位。
+
+新的只读核验建议与资源隔离原则见 [视觉计划](docs/VISION_LANDING_PLAN.md)。下方环境验收是 V1.0 保留条目；其中 MAVSDK 双接收不作为视觉课的硬性前置。
+
 ## 2026-10-16 实验环境补充（优先于下方初始规划）
 
 | 项目 | 本次事实 | 尚缺证据 |

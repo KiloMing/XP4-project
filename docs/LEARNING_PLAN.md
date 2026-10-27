@@ -1,4 +1,10 @@
-# 个性化学习计划
+# MAVSDK V1.0 个性化学习计划（保留）
+
+## 与当前视觉路线的关系
+
+2026-10-27 起，静态 AprilTag 视觉降落按 [VISION_LANDING_PLAN](VISION_LANDING_PLAN.md) 的八阶段、24 课推进。本文保留原 MAVSDK V1.0 范围、课时与历史进度，不把旧阶段编号套到视觉课上。
+
+两条路线共享 SITL、坐标、状态反馈和故障处理基础；MAVSDK 编译成功不能替代 ROS 2 通信验收，commander 起降也不能替代 Offboard 实验。恢复旧路线时仍先验证 `px4_connect` 系统发现；进入视觉路线时从系统图和环境核验开始，无需先完成整套往返任务。
 
 ## 起点与目标
 
@@ -65,4 +71,4 @@
 
 阶段 1 已完成 SITL/X500 启动、QGC 连接和 commander 起降基线实践；版本矩阵、独立重启复现仍待补齐。阶段 2 已安装 MAVSDK v4.0.1 amd64 并完成 lesson_01 编译链接，真实源码待同步；尚无程序运行或系统发现证据。
 
-下一课先运行 `./build/px4_connect` 验证发现 PX4，成功后进入 Telemetry。不得跳过发现验证或将 commander 起降计为阶段 3 的 MAVSDK 自动起降。详见 [CURRENT](../CURRENT.md) 与 [当日记录](../daily/2026-10-16.md)。
+恢复 MAVSDK 路线时，下一课先运行 `./build/px4_connect` 验证发现 PX4，成功后进入 Telemetry。不得跳过发现验证或将 commander 起降计为阶段 3 的 MAVSDK 自动起降。详见 [CURRENT](../CURRENT.md) 与 [当日记录](../daily/2026-10-16.md)。

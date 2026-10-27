@@ -1,8 +1,17 @@
 # 当前进度
 
-更新时间：2026-10-16（Asia/Shanghai）
+更新时间：2026-10-27（Asia/Shanghai）
 
-## 当前实际进度（2026-10-16 后续实验）
+## 当前主线：视觉降落课程整理，实验待开始
+
+- 已审阅参考仓库的 README、依赖声明、launch、坐标配置、任务管理器与视觉控制器，新增 [八阶段、24 课计划](docs/VISION_LANDING_PLAN.md)。
+- 目标组合为 Ubuntu 24.04 / ROS 2 Jazzy / Gazebo Harmonic / PX4 SITL；实际安装版本和全链路兼容性待核验。
+- 视觉 01～24 课均未通过实践验收。没有相机桥接、AprilTag、TF、ROS Offboard 或视觉降落实验的新证据。
+- 本次工作仅涉及文档与 Git，没有修改用户 Ubuntu 的 PX4、MAVSDK 或旧 ROS 源码，没有重新运行仿真。
+- 下一次：第 01 课画组件数据流，第 02 课只读核验环境；之后补独立重启基线。第 06 课通过非视觉 Offboard 验收后，才逐步接视觉控制。
+- 旧 MAVSDK 路线保留；可以先完成下方连接发现验证，但不把它作为完成整条视觉路线的前置要求。
+
+## MAVSDK V1.0 已有实际进度（2026-10-16 后续实验）
 
 - Ubuntu x86_64；截图显示 Ubuntu 24.04 的 MAVSDK 包安装成功。
 - PX4 SITL + Gazebo X500 编译、启动成功；OpticalFlow 下载因 127.0.0.1:7897 代理失败，修复后继续成功。
@@ -11,7 +20,7 @@
 - libmavsdk-dev v4.0.1 amd64 安装成功；~/px4_ws/mavsdk_study/lesson_01 编译链接至 [100%] Built target px4_connect。
 - 证据来自用户聊天展示及本次明确补充，非此次 Codex 重新运行；详见 [当日记录](daily/2026-10-16.md)。
 
-## 当前未完成与下一步
+## MAVSDK V1.0 未完成与恢复入口
 
 1. 保持 PX4 SITL 运行，在 Ubuntu 的 lesson_01 目录执行 `./build/px4_connect`，记录退出状态、连接配置和实际发现结果。**目前没有已运行或已发现飞控的证据。**
 2. 发现 PX4 后再进入 MAVSDK Telemetry：连接、位置、高度、飞行模式、解锁及着陆状态，随后验证断连。
