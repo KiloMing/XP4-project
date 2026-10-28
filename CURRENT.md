@@ -2,11 +2,12 @@
 
 更新时间：2026-10-28（Asia/Shanghai）
 
-## 当前主线：第 04 课，PX4 与 ROS 2 话题已通
+## 当前主线：第 04 课，C++ 状态接收已通，Offboard 待完成
 
 - 环境已确认：Ubuntu 24.04.4 LTS / x86_64 / ROS 2 Jazzy / Gazebo Sim 8.15.0 / PX4 v1.17.0，详见 [环境表](ENVIRONMENT.md)。Agent、px4_msgs 的实际 commit 仍待核对。
 - 第 03 课单轮起降通过；第 04 课已用 `ros2 topic echo` 读到 `/fmu/out/vehicle_local_position_v1`，详见 [当天排错与复现记录](daily/2026-10-28.md)。
-- 下一步写最小 C++ 只读节点，保存至少 30 秒状态，停源后验证过期/断连。以上尚未完成；独立重启、稳定性与日志归档也待补，不能把通信成功当成整课验收。
+- 晚间已编译并运行 `px4_state_monitor` 包的 `position_monitor`，从等待数据转为连续位置/速度反馈；控制输入话题及 ACK 话题存在。Ubuntu `~/vision_landing_ws` 中的真实源码尚未同步，订阅路径存在记录差异，详见当天日志。
+- 下一步补至少 30 秒状态归档、有效位与频率核对、停源后的过期/断连检测及独立重启。ROS 2 Offboard 仅学习了消息分工和心跳要求，尚未完成发布器、控制命令、模式切换、解锁或起降验收。
 - 相机桥接、AprilTag、TF、ROS Offboard 和视觉降落尚未验收，继续按 [24 课计划](docs/VISION_LANDING_PLAN.md) 学习。
 - 本次 Codex 只整理文档和 Git；没有在 Ubuntu 复测，也没有修改 PX4、MAVSDK 或旧 ROS 工程。旧 MAVSDK 进度保留如下。
 

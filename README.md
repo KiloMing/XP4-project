@@ -8,7 +8,7 @@
 
 2026-10-27 新增 [八阶段、24 课视觉降落计划](docs/VISION_LANDING_PLAN.md)：Ubuntu 24.04 + ROS 2 Jazzy + Gazebo Harmonic + PX4 SITL，从通信、相机和坐标变换逐步学到对准、下降、任务状态机与重复实验。
 
-2026-10-28：第 03 课单轮起降通过，第 04 课 PX4 v1.17.0 + Jazzy 话题通信通过，已读到 `/fmu/out/vehicle_local_position_v1`。安装方案和排错见 [当天记录](daily/2026-10-28.md)。下一步写 C++ 只读节点，补 30 秒记录、断连检测和独立重启；这些尚未完成。相机、Offboard 和视觉降落仍待验收，上游的落点精度不代表本项目结果。
+2026-10-28：第 03 课单轮起降记录保留；第 04 课已完成命令行通信，以及 C++ `px4_state_monitor` 包中 `position_monitor` 的编译、启动和连续位置/速度接收，控制输入话题也已确认存在。详见 [当天学习记录](daily/2026-10-28.md)。节点源码位于 Ubuntu `~/vision_landing_ws`，尚未同步到本仓库；订阅路径记录差异、30 秒日志、断连检测和独立重启仍待核对或补测。**下一阶段 ROS 2 Offboard 离板控制尚未完成**，示范代码讨论不计为运行或飞行成果；相机和视觉降落仍待验收。
 
 MAVSDK V1.0 作为历史路线保留，尚未完成的任务继续如实记录。视觉路线不要求先完成 MAVSDK 往返任务；两套控制程序不能同时控制同一仿真机。参考项目：[px4_vision_landing_staticTag](https://github.com/09priyamgupta/px4_vision_landing_staticTag)。
 
