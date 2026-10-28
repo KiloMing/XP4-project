@@ -1,5 +1,23 @@
 # 环境与版本
 
+## 2026-10-28：PX4 与 ROS 2 已读到位置消息
+
+这次在 Ubuntu 上把通信跑通了，具体安装、启动和排错见 [当天记录](daily/2026-10-28.md)。以下环境来自本次用户确认，话题和收包结果另有聊天截图；不是 Codex 在 Ubuntu 上重新检测的输出。
+
+| 项目 | 本次记录 | 还要补什么 |
+|---|---|---|
+| 系统 | Ubuntu 24.04.4 LTS，x86_64 | 完整系统输出归档 |
+| ROS 2 | Jazzy；`/opt/ros/jazzy/setup.bash` | 包版本、RMW 与环境变量 |
+| Gazebo | Gazebo Sim 8.15.0（Harmonic） | 包来源 |
+| PX4 | v1.17.0；`~/px4_ws/PX4-Autopilot` | 实测 commit、本地差异 |
+| ROS 工作区 | `~/vision_landing_ws`，使用 `px4_msgs` | px4_msgs 实测 commit、标签与差异 |
+| Agent | MicroXRCEAgent，UDP 8888；通信已通 | v2.4.3 作为所用安装方案记录，实际安装版本/commit 待核对 |
+| 消息版本方案 | px4_msgs v1.17.0 标签方案 | 未取得本机 checkout 证据，不能当成已锁定版本 |
+| 位置话题 | `/fmu/out/vehicle_local_position_v1` | 持续时长、频率与断连验证 |
+| 消息类型 / QoS | `px4_msgs/msg/VehicleLocalPosition`；发布端 BEST_EFFORT、TRANSIENT_LOCAL | 自写节点接收和过期处理 |
+
+第 03 课单轮起降通过；第 04 课只读话题通信通过。自写 C++ 节点、至少 30 秒记录及断连检测尚未完成，独立重启复现也未验收。下方 10 月 27 日适配表保留为历史规划，已确认项目以本节为准。
+
 ## 2026-10-27 视觉路线适配表（规划，未安装或复测）
 
 | 项目 | 目标 / 核查内容 | 当前证据 |

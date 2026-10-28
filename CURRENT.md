@@ -1,15 +1,14 @@
 # 当前进度
 
-更新时间：2026-10-27（Asia/Shanghai）
+更新时间：2026-10-28（Asia/Shanghai）
 
-## 当前主线：视觉降落课程整理，实验待开始
+## 当前主线：第 04 课，PX4 与 ROS 2 话题已通
 
-- 已审阅参考仓库的 README、依赖声明、launch、坐标配置、任务管理器与视觉控制器，新增 [八阶段、24 课计划](docs/VISION_LANDING_PLAN.md)。
-- 目标组合为 Ubuntu 24.04 / ROS 2 Jazzy / Gazebo Harmonic / PX4 SITL；实际安装版本和全链路兼容性待核验。
-- 视觉 01～24 课均未通过实践验收。没有相机桥接、AprilTag、TF、ROS Offboard 或视觉降落实验的新证据。
-- 本次工作仅涉及文档与 Git，没有修改用户 Ubuntu 的 PX4、MAVSDK 或旧 ROS 源码，没有重新运行仿真。
-- 下一次：第 01 课画组件数据流，第 02 课只读核验环境；之后补独立重启基线。第 06 课通过非视觉 Offboard 验收后，才逐步接视觉控制。
-- 旧 MAVSDK 路线保留；可以先完成下方连接发现验证，但不把它作为完成整条视觉路线的前置要求。
+- 环境已确认：Ubuntu 24.04.4 LTS / x86_64 / ROS 2 Jazzy / Gazebo Sim 8.15.0 / PX4 v1.17.0，详见 [环境表](ENVIRONMENT.md)。Agent、px4_msgs 的实际 commit 仍待核对。
+- 第 03 课单轮起降通过；第 04 课已用 `ros2 topic echo` 读到 `/fmu/out/vehicle_local_position_v1`，详见 [当天排错与复现记录](daily/2026-10-28.md)。
+- 下一步写最小 C++ 只读节点，保存至少 30 秒状态，停源后验证过期/断连。以上尚未完成；独立重启、稳定性与日志归档也待补，不能把通信成功当成整课验收。
+- 相机桥接、AprilTag、TF、ROS Offboard 和视觉降落尚未验收，继续按 [24 课计划](docs/VISION_LANDING_PLAN.md) 学习。
+- 本次 Codex 只整理文档和 Git；没有在 Ubuntu 复测，也没有修改 PX4、MAVSDK 或旧 ROS 工程。旧 MAVSDK 进度保留如下。
 
 ## MAVSDK V1.0 已有实际进度（2026-10-16 后续实验）
 
